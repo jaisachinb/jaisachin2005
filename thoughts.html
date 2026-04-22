@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Notes &mdash; Jai Sachin Baskar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a2e50;
+  --ra:#7c1d1d;--rl:#fdf6f6;
+  --ba:#1e3a5f;--bl:#f0f4f9;
+  --na:#2a5a00;--nla:#f2fbf4;
+  --rule:#e4e2dd;--text:#18181b;--t2:#3f3f46;--t3:#71717a;
+  --bg:#f8f7f4;--lk:#1a2e50;
+  --accent:#b5881a;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:15.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* TOPBAR */
+.topbar{background:var(--navy);color:#fff;padding:0 44px;height:46px;display:flex;align-items:center;justify-content:space-between;font-size:13px;position:sticky;top:0;z-index:100}
+.topbar-name{font-family:'EB Garamond',serif;font-style:italic;font-size:17px;opacity:.92;text-decoration:none;color:#fff}
+.topbar-links{display:flex}
+.topbar-links a{color:rgba(255,255,255,.68);text-decoration:none;padding:0 14px;height:46px;display:flex;align-items:center;border-left:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .15s,background .15s}
+.topbar-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.topbar-links a.active{color:#fff;border-bottom:2px solid var(--accent)}
+
+/* PAGE */
+.page{max-width:760px;margin:0 auto;padding:56px 40px 80px}
+
+/* HEADER */
+.pg-header{margin-bottom:48px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+.pg-back{font-size:12.5px;color:var(--t3);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;transition:color .15s}
+.pg-back:hover{color:var(--lk)}
+.pg-label{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
+.pg-title{font-family:'EB Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:600;line-height:1.15;margin-bottom:14px;color:var(--text)}
+.pg-desc{font-size:15px;color:var(--t2);line-height:1.8;max-width:560px}
+
+/* FILTER */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border:1px solid var(--rule);background:transparent;color:var(--t3);cursor:pointer;transition:all .15s;font-family:inherit}
+.filter-btn:hover{border-color:var(--navy);color:var(--navy)}
+.filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* THOUGHT ENTRIES */
+.thought{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+.thought:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.t-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:10px}
+.t-tag{font-size:9.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:3px 10px;border:1px solid;white-space:nowrap;flex-shrink:0;margin-top:4px}
+.tq{border-color:var(--ra);color:var(--ra);background:var(--rl)}
+.te{border-color:var(--ba);color:var(--ba);background:var(--bl)}
+.tn{border-color:var(--na);color:var(--na);background:var(--nla)}
+.t-title{font-family:'EB Garamond',serif;font-size:20px;font-weight:600;line-height:1.3;color:var(--text)}
+.t-date{font-size:12px;color:var(--t3);margin-bottom:14px;letter-spacing:.03em}
+.t-body{font-size:15px;color:var(--t2);line-height:1.85}
+.t-body p{margin-bottom:13px}
+.t-body p:last-child{margin-bottom:0}
+.t-body strong{color:var(--text);font-weight:600}
+.t-body em{font-style:italic}
+.t-body a{color:var(--lk);text-decoration:none}
+.t-body a:hover{text-decoration:underline}
+.t-body blockquote{border-left:3px solid var(--rule);padding:2px 0 2px 16px;color:var(--t3);font-style:italic;margin:14px 0}
+
+/* FOOTER */
+footer{max-width:760px;margin:0 auto;padding:22px 40px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--t3)}
+footer a{color:var(--lk);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .topbar-links{display:none}
+  .page{padding:36px 20px 60px}
+  .t-header{flex-direction:column;gap:8px}
+  footer{padding:20px;flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-name">Jai Sachin Baskar</a>
+  <div class="topbar-links">
+    <a href="index.html#areas">Research</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#publications">Publications</a>
+    <a href="thoughts.html" class="active">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="pg-header rv">
+    <a href="index.html" class="pg-back">&#8592; Back to portfolio</a>
+    <div class="pg-label">Research Notes</div>
+    <h1 class="pg-title">Questions I keep returning to</h1>
+    <p class="pg-desc">Working notes on open questions in usable security and HCI — observations from reading, connections I am still thinking through. These are exploratory, not conclusions.</p>
+  </div>
+
+  <div class="filter-row rv">
+    <button class="filter-btn active" onclick="filter('all',this)">All</button>
+    <button class="filter-btn" onclick="filter('q',this)">Research Questions</button>
+    <button class="filter-btn" onclick="filter('e',this)">Explorations</button>
+    <button class="filter-btn" onclick="filter('n',this)">Notes</button>
+  </div>
+
+  <!-- NOTE 1 -->
+  <div class="thought rv" data-type="q">
+    <div class="t-header">
+      <div class="t-title">Do security warnings help users decide, or just transfer blame?</div>
+      <span class="t-tag tq">Research Question</span>
+    </div>
+    <div class="t-date">April 2026</div>
+    <div class="t-body">
+      <p>Most security warnings are built by systems teams, not behavioral scientists. When a browser flags an insecure connection or an app requests camera access, the user is nominally informed — but informed consent assumes a level of mental-model clarity that warning-habituation research consistently finds is not present.</p>
+      <p>The question I keep returning to: are warnings designed to <strong>support genuine decisions</strong>, or to <strong>shift responsibility</strong> from the system designer to a user who lacks the context to act on the information?</p>
+      <p>The two goals produce very different designs. A warning built for decision support would be contextual, timed appropriately, and calibrated to interrupt only when the choice genuinely matters. A warning built for legal cover needs only to be present and technically legible. I suspect most deployed warnings sit closer to the second category — and that this is a structural problem, not a design one. Until the incentives of system builders are better aligned with user informational needs, UI improvements will only go so far.</p>
+    </div>
+  </div>
+
+  <!-- NOTE 2 -->
+  <div class="thought rv" data-type="e">
+    <div class="t-header">
+      <div class="t-title">Can the AMC framework extend from hardware attackers to online threat actors?</div>
+      <span class="t-tag te">Exploration</span>
+    </div>
+    <div class="t-date">March 2026</div>
+    <div class="t-body">
+      <p>During my work at the University of Queensland, I used the Awareness, Motivation, and Capability (AMC) framework to analyze attacker decision-making against patented IC protection mechanisms. The framework treats adversaries as bounded-rational agents — modeling threat by what attackers are likely to know, want, and be able to do, rather than by worst-case capability alone.</p>
+      <p>I have since been thinking about whether AMC transfers to online threat actors. Phishers and credential stuffers operate in different ecosystems: their awareness comes from open-source intelligence and dark web markets rather than patent filings; their motivation is often financial and commoditized; their capability is frequently rented rather than developed. The commoditization of attack tooling may effectively collapse the capability dimension of AMC in online contexts — if a working phishing kit costs very little, capability becomes roughly constant across attacker populations. What then differentiates successful attacks is primarily target selection and attacker awareness, which shifts where defenders should direct attention.</p>
+      <blockquote>If the capability bar is effectively zero, usable security becomes less about raising technical barriers and more about managing information asymmetry.</blockquote>
+      <p>This framing feels productive, but I have not yet worked through it carefully enough to test it.</p>
+    </div>
+  </div>
+
+  <!-- NOTE 3 -->
+  <div class="thought rv" data-type="n">
+    <div class="t-header">
+      <div class="t-title">Privacy as a felt experience, not a policy property</div>
+      <span class="t-tag tn">Note</span>
+    </div>
+    <div class="t-date">February 2026</div>
+    <div class="t-body">
+      <p>Privacy research often begins with policy frameworks — what data is collected, by whom, under what legal basis. These questions matter. But users experience privacy not as a compliance state but as a felt sense of exposure or safety.</p>
+      <p>There is a real gap between technical or legal definitions of a privacy violation and whether a person subjectively experiences harm. A GDPR-compliant system can still feel alienating. A system that quietly collects more than its policy discloses may produce no felt harm at all, because users have no awareness of the gap. Optimizing only for compliance produces systems that are legally defensible but experientially alienating; optimizing only for felt experience risks ignoring harms users cannot perceive.</p>
+      <p><strong>The interesting design question is at the intersection:</strong> how do you surface real privacy risks in ways that connect to users' existing sense of exposure, without generating so much anxiety that people disengage? I think usable privacy research needs to take subjective privacy experience seriously as a primary variable — not something to be measured after the technically correct design has already been determined.</p>
+    </div>
+  </div>
+
+  <!-- NOTE 4 -->
+  <div class="thought rv" data-type="q">
+    <div class="t-header">
+      <div class="t-title">When does AI assistance become AI dependency in security operations?</div>
+      <span class="t-tag tq">Research Question</span>
+    </div>
+    <div class="t-date">January 2026</div>
+    <div class="t-body">
+      <p>Security analysts increasingly rely on AI for anomaly detection, threat classification, and incident triage. There is reasonable evidence that AI assistance improves detection rates in controlled studies. There is much less research on what happens to human skill and judgment over time when AI reliably handles routine cases.</p>
+      <p>Automation bias is well-documented in aviation and medicine: operators working alongside reliable automated systems tend to under-monitor and lose the practiced judgment to intervene when automation fails — often at the highest-stakes moments. Similar dynamics may be developing in security operations. If an AI system accurately flags 95% of threats, analysts adapt their attention accordingly; the 5% the system misses then encounters analysts whose threat-recognition skills have atrophied from disuse.</p>
+      <p>The evaluation question is not only "how accurate is the AI?" but <strong>"what kind of analyst does working alongside this AI produce over time?"</strong> I am not aware of longitudinal research on human capability change in AI-assisted security roles that approaches the rigor of aviation human factors. That gap seems worth addressing.</p>
+    </div>
+  </div>
+
+  <!-- NOTE 5 -->
+  <div class="thought rv" data-type="e">
+    <div class="t-header">
+      <div class="t-title">On contextual integrity as a design constraint, not just an analytical lens</div>
+      <span class="t-tag te">Exploration</span>
+    </div>
+    <div class="t-date">December 2025</div>
+    <div class="t-body">
+      <p>Nissenbaum's contextual integrity framework holds that privacy violations are not fundamentally about the quantity of information disclosed, but about whether information flows match the norms of the context in which information was originally shared. Medical information shared with a physician flows appropriately to a consulting specialist; it does not flow appropriately to an employer, regardless of the employer's legitimate interest.</p>
+      <p>This is analytically useful, but it creates an immediate design problem: contextual norms are not stable, not universally shared, and often not explicit even to the people who hold them. A system that tries to enforce contextual integrity mechanically risks being either so permissive it protects nothing, or so restrictive it becomes unusable.</p>
+      <p>I think the more tractable design goal is <strong>contextual legibility</strong> rather than contextual enforcement: systems that make it straightforward for users to perceive when an information flow is occurring and whether it matches their sense of the appropriate context. Enforcement remains with the user; the system's job is to surface the relevant information in a form that allows a meaningful judgment to be made.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>Jai Sachin Baskar &nbsp;&middot;&nbsp; <a href="mailto:jaisachinb05@gmail.com">jaisachinb05@gmail.com</a></span>
+  <span><a href="index.html">Back to portfolio</a></span>
+</footer>
+
+<script>
+function filter(type,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.thought').forEach(t=>{
+    t.style.display=(type==='all'||t.dataset.type===type)?'':'none';
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target)}}),{threshold:.04});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i*.05)+'s';obs.observe(el)});
+</script>
+</body>
+</html>
